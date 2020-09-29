@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Punto de venta</title>
+
+    <link rel="shortcut icon" href="/img/logo.png" type="image/x-icon">
+    <!-- icons -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <header class="site-header inicio">
+        <div class="cortina">
+            <div class="contenedor contenido-header">
+                <div class="barra">
+                    <a href="index.html" class="logo-principal">
+                        <i class="fas fa-store"></i>
+                    </a>
+                    <nav class="navegacion">
+                        <a id="tabla">Agregar</a>
+                        <a>Carrito</a>
+                    </nav>
+
+                </div>
+                <div class="titulo-header">
+
+                    <h1>Indira Gandhi (1917-1984)</h1>
+                    <p>“Para liberarse, la mujer debe sentirse libre, no para rivalizar con los hombres, sino libres en
+                        sus capacidades y personalidad”.</p>
+                    <hr>
+                </div>
+
+            </div>
+        </div>
+    </header>
+    <main>
+
+        <!-- modal table -->
+        <div id="myModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close">&times;</span>
+                    <h1>Productos</h1>
+                </div>
+                <div class="modal-body">
+                    <div class="content-table">
+                        <div class="col-12">
+                            <div>
+                                <a class="btn btn-success" id="registro">Nuevo <i class="fa fa-plus"></i></a>
+                            </div>
+                            <br>
+                            <table class="table table-bordered" id="myTable">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Nombre</th>
+                                        <th>Dscripción</th>
+                                        <th>Preccio de Venta</th>
+                                        <th>Fecha de Publicación</th>
+                                        <th>Existencia</th>
+                                        <th>Editar</th>
+                                        <th>Eliminar</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="data1">
+
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <h3>------------</h3>
+                </div>
+            </div>
+        </div>
+        <!-- modal de formulario -->
+        <div id="myModal2" class="modal2">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="cerrar">&times;</span>
+                    <h1>Nuevo producto</h1>
+                </div>
+                <div class="modal-body">
+                    <div class="contenido-form">
+                        <form action="">
+                            <div class="row">
+                                <div class="col-25">
+                                    <label for="nombre">Nombre</label>
+                                </div>
+                                <div class="col-75">
+                                    <input type="text" id="nombre" name="nombre" placeholder="Nombre del producto">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-25">
+                                    <label for="img">Imagen del producto</label>
+                                </div>
+                                <div class="col-75">
+                                    <input type="file" id="img" name="img">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-25">
+                                    <label for="descripcion">Descripción</label>
+                                </div>
+                                <div class="col-75">
+                                    <input type="text" id="descripcion" name="descripcion"
+                                        placeholder="Desdripción del producto">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-25">
+                                    <label for="precio">Precio</label>
+                                </div>
+                                <div class="col-75">
+                                    <input type="number" id="precio" name="precio" placeholder="Precio del producto">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-25">
+                                    <label for="stock">Cantidad</label>
+                                </div>
+                                <div class="col-75">
+                                    <input type="number" id="stock" name="stock" placeholder="Cantidades del producto">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <input type="submit" value="Submit">
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <h3>----------</h3>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- imagenes -->
+        <section class="content" id="content">
+        </section>
+
+    </main>
+    <footer class="footer">
+        <nav class="navegacion">
+            <!-- <a id="tabla">Agregar</a>
+            <a href="carrito.html">Carrito</a> -->
+        </nav>
+        <hr>
+        <p>© Copyright 2020-2021</p>
+    </footer>
+
+    <script src="/js/index.js"></script>
+</body>
+
+</html>

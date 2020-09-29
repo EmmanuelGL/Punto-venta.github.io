@@ -1,0 +1,325 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+/* header & nav home */
+.inicio{
+    background-image: url(/img/fondo-header.png);
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+}
+.cortina{
+    height: 100vh;
+    background-color: rgba(2, 2, 2, 0.37);
+}
+.contenedor{
+    max-width: 1200px;
+    margin: 0 auto 0 auto;
+    
+}
+.barra{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 15px;
+}
+.contenido-header{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.contenido-header h1{
+ color: #ffffff
+}
+.navegacion > a{
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 18px;
+    margin-right: 10px;
+    border-left: 2px solid white;
+    border-bottom: 2px solid white;
+    padding: 0 2rem;
+    border-radius: 10px;
+}
+.navegacion > a:hover{
+    background-color: rgb(0, 0, 0);
+    border-radius: 10px;
+}
+.logo-principal{
+    color: white;
+    font-size: 4rem;
+}
+.titulo-header{
+    position: relative;
+    color: white;
+    bottom: 35%;
+    text-align: center;
+}
+.titulo-header hr{
+    margin: auto;
+    width: 50%;
+    height: 0.1rem;
+    background-color: white;
+}
+.titulo-header p{
+    font-size: 1.5rem;
+    padding: 2rem;
+}
+
+/* nav agregar & carrito */
+.navegacion-head{
+    background-color:#3769FA;
+    display: flex;
+    font-size: 1.3rem;
+    height: 4rem;
+    align-items: center;
+    justify-content: space-between;
+}
+.navegacion-head a{
+    color: white;
+    padding: 0 2rem;
+    text-decoration: none;
+}
+.navegacion-head a:hover{
+    background-color: rgb(0, 0, 0);
+    border-radius: 10px;
+}
+
+/* main */
+
+.producto{
+    width: calc(100% / 3.7);
+    margin: 2rem;
+    float: left;  
+}
+.producto img{
+    width: 100%;
+}
+.content{
+    width: 100%;
+}
+
+/* style de agregar */
+.col-12{
+    width: 80%;
+    margin: auto;
+    margin-bottom: 2rem;
+}
+.content-table{
+    height:auto;
+}
+
+.table{
+    border-collapse: collapse;
+    width: 100%;
+}
+.table thead{
+    background-color: rgba(32, 94, 228, 0.727);
+    color: white;
+}
+.table-bordered th,.table-bordered td{
+    border:2px solid rgba(90, 89, 89, 0.405);
+   padding:.5rem;
+}
+
+tr td:first-child {
+    background: #f0f0f0;
+    font-weight:bold;
+    font-size:1.3em;
+}
+.btn-success{
+    background-color: rgb(21, 233, 39);
+    color: white;
+    text-decoration: none;
+}
+.btn{
+    padding: 10px;
+    display: inline-block;
+}
+
+.btn-warning{
+    background-color: rgb(248, 99, 18);
+    color: white;
+    padding: 10px;
+}
+.btn-danger{
+    background-color: red;
+    color:white;
+    padding: 10px;
+}
+.text-center{
+    text-align: center;
+}
+@media screen and (max-width:868px) {
+    table {
+      display: block;
+      overflow-x: auto;
+    }
+}
+
+/* style modal */
+/* The Modal (background) */
+.modal, .modal2 {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+  }
+  
+  /* Add Animation */
+  @-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+  }
+  
+  @keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+  }
+  
+  /* The Close Button */
+  .close, .cerrar {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,.cerrar:hover,
+  .close:focus,.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .modal-header {
+    padding: 2px 16px;
+    background-color: #0cafe0;
+    color: white;
+    text-align: center;
+  }
+  
+  .modal-body {padding: 2px 16px;}
+  
+  .modal-footer {
+    padding: 2px 16px;
+    background-color: #0cafe0;
+    color: white;
+  }
+
+/* style de formulario */
+
+input[type=text], input[type=number] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+  }
+  
+  label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+  }
+  
+  input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+    margin: 12px;
+  }
+  
+  input[type=submit]:hover {
+    background-color: #45a049;
+  }
+  
+  .contenido-form {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    margin: 10px;
+  }
+  
+  .col-25 {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+  }
+  
+  .col-75 {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 600px) {
+    .col-25, .col-75, input[type=submit],input[type=number]  {
+      width: 100%;
+      margin-top: 0;
+    }
+  }
+
+
+/* Footer */
+.footer{
+    background-color: black;
+    padding: 30px 0;
+    display: block; 
+    clear: both;
+}
+
+.footer nav{
+   text-align: center;
+   margin: 12px;
+   
+}
+.footer hr{
+   height: 3px;
+   width: 45%;
+   margin: auto;
+   background-color: white;
+}
+.footer p{
+   color: white;
+   text-align: center;
+   margin-top: 1rem;
+}
+
+
