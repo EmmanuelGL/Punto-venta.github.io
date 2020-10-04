@@ -63,7 +63,16 @@ function registroNew(){
   modal.style.display = "none";
 }
 function modalCarro(){
+  // carroId.innerHTML ='';
   modal4.style.display = "block"
+  if(carrito.length==0 ){
+    carroId.innerHTML ='';
+    carroId.innerHTML = carroId.innerHTML +`
+      <h1>No hay agregado ningun producto</h1>
+    `
+  } 
+  
+ 
 }
 btn.onclick = function () {
   modal.style.display = "block";
@@ -85,13 +94,6 @@ cerrarModal3.onclick = function () {
 }
 cerrarModal4.onclick = function () {
   modal4.style.display = "none";
-  carroId.innerHTML ='';
-  console.log(carrito.length)
-  if(carrito.length==0){
-    carroId.innerHTML = carroId.innerHTML +`
-      <h1>No hay agregado ningun producto</h1>
-    `
-  }
 }
 
 // When the user clicks anywhere outside of the modal, close it
@@ -116,6 +118,7 @@ var time = new Date();
 
 
 
+// funciones de carrito
 
 function carro(po){
   for(let i=0; i<productos.length;i++){
@@ -124,33 +127,51 @@ function carro(po){
        carrito.push(productos[i]);
     }
   }
+  showCarro()
+}
+function drop1(id) {
+  var confirmar = confirm("¿Esta seguro que desea eliminar este Producto?")
+  if (confirmar) {
+    console.log("si entra " + id) 
+    for(let i=0;i<carrito.length;i++){
+      if(carrito[i].id==id){
+        console.log('di entra'+carrito[i].id+"=="+id+"--"+i)
+        productos.splice(i, 1);
+        
+        console.log(JSON.stringify(productos)) 
+        carroId.innerHTML ='';
+        showCarro() 
+      }
+    }
+  }
+  
+}
+function showCarro(){
   carroId.innerHTML ='';
+  console.log('si entra' + carrito.length)
   for(let j=0; j< carrito.length;j++){
     carroId.innerHTML = carroId.innerHTML +`
-    <div class="table-users">
-      <div class="header">Users</div>
+    <div class="table-productos">
+      <div class="header-carrito">${carrito[j].nombre}</div>
   
       <table cellspacing="0">
           <tr>
-              <th>Nombre</th>
               <th>Imagen</th>
               <th>Precio</th>
               <th>Categoria</th>
+              <th>Eliminar</th>
           </tr>
           <tr>
-            <td>${carrito[j].nombre}</td>
             <td><img src="${carrito[j].img}" alt="" /></td>
             <td>${carrito[j].precio}</td>
-            <td>${carrito[j].precio}</td>
             <td>${carrito[j].categoria} </td>
-      </tr>
+            <td style="text-align: center;"><a class="btn-danger" href="javascript:drop1(${carrito[j].id});" ><i class="fa fa-trash"></i></a></td>
+          </tr>
       </table>
     </div>
     `
   }
- 
 }
-
 // funcion mostrar imagenes en el index
 function index() {
   for (var i = 0; i < productos.length; i++) {

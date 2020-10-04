@@ -102,7 +102,7 @@
     width: 100%;
 }
 
-/* style de agregar */
+/* style de agregar  tabla de mostrar  */
 .col-12{
     width: 80%;
     margin: auto;
@@ -111,7 +111,6 @@
 .content-table{
     height:auto;
 }
-
 .table{
     border-collapse: collapse;
     width: 100%;
@@ -124,7 +123,6 @@
     border:2px solid rgba(90, 89, 89, 0.405);
    padding:.5rem;
 }
-
 tr td:first-child {
     background: #f0f0f0;
     font-weight:bold;
@@ -139,7 +137,6 @@ tr td:first-child {
     padding: 10px;
     display: inline-block;
 }
-
 .btn-warning{
     background-color: rgb(248, 99, 18);
     color: white;
@@ -160,6 +157,49 @@ tr td:first-child {
     }
 }
 
+/* tabla del carrito */
+.header-carrito {
+  background-color: #ccc;
+  color: white;
+  font-size: 1.5em;
+  padding: 1rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.table-productos img {
+  border-radius: 50%;
+  height: 60px;
+  width: 60px;
+}
+
+.table-productos {
+  border: 1px solid #ccc;
+  max-width: calc(100% - 2em);
+  margin: 1em auto;
+  width: 800px;
+  margin: auto;
+  
+}
+
+.table-productos table { width: 100%; text-align: center; }
+
+.table-productos td,.table-productos th { padding: 10px; }
+
+.table-productos td {
+  text-align: center;
+  vertical-align: middle;
+}
+.table-productos td:last-child {
+  font-size: 0.95em;
+  line-height: 1.4;
+  text-align: left;
+}
+
+.table-productos th { background-color: #efefef; }
+
+.table-productos tr:nth-child(2n) { background-color: white; }
+.table-productos tr:nth-child(2n+1) { background-color: #fafafa; }
 /* style modal */
 /* The Modal (background) */
 .modal, .modal2, .modal3, .modal4 {
