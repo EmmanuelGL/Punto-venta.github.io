@@ -1,35 +1,55 @@
 var productos = [
   {
     id:1,
-    nombre: "prueba1",
-    img: "../img/fondo-header.png",
-    descripcion: "lorem jajajaja hola jajaja prueba 1 ",
-    precio: 15.69,
+    nombre: "Bicicleta",
+    img: "https://images.pexels.com/photos/212185/pexels-photo-212185.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+    descripcion: "Actívate y sal a ejercitarte! , especial para ti que te encanta estar en contacto con la naturaleza ¡ve de paseo al parque, a la montaña o simplemente toma el carril para bicis en tu ciudad! Ve siempre con precaución.",
+    precio: 2464,
     fecha_publicacion: "26/9/2020 20:40:2",
     stock: 15,
-    categoria: "Celulares"
+    categoria: "Deporte"
   },
   {
     id:2,
-    nombre: "prueba2",
-    img: "../img/fondo-header.png",
-    descripcion: "lorem jajajaja hola jajaja prueba 2 ",
-    precio: 15.69,
+    nombre: "LABIALES INDELEBLES",
+    img: "https://images.pexels.com/photos/3373725/pexels-photo-3373725.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+    descripcion: "En el momento que estás por escoger un labial indeleble más allá de tener en cuenta todos sus beneficios, la fórmula, la duración, etc. siempre cuenta tu estado de ánimo, ¡no existe mal día cuando llevas un labial del que estás mega in love! ¡Y más si lo vas a usar todos los días! Con los labios vibrantes",
+    precio: 155,
     fecha_publicacion: "26/9/2020 20:40:2",
     stock: 5,
-    categoria: "Motos"
+    categoria: "Cosméticos"
   },
   {
     id:3,
-    nombre: "prueba3",
-    img: "../img/fondo-header.png",
-    descripcion: "lorem jajajaja hola jajaja prueba 3 ",
-    precio: 15.69,
+    nombre: "Flores",
+    img: "https://images.pexels.com/photos/4618517/pexels-photo-4618517.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+    descripcion: "Regala este florero, demuestra tu amor con un tierno detalle que jamás olvidará, no hay mejor manera para sorprender a tu amada que con este hermoso florero. ¡Es perfecto para celebrar cualquier tipo de ocasión! ",
+    precio: 399,
     fecha_publicacion: "26/9/2020 20:40:2",
     stock: 20,
     categoria: "Bolsas"
   },
+  {
+    id:4,
+    nombre: "Ropa",
+    img: "https://images.pexels.com/photos/4458521/pexels-photo-4458521.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+    descripcion: "Composición: Algodón 79% Poliamida 21%. Instrucciones de lavado:Lavar a máquina, máx. 30ºC, No usar cloro, Planchar máx. 110ºC, No usar secadora.",
+    precio: 1060,
+    fecha_publicacion: "26/9/2020 20:40:2",
+    stock: 20,
+    categoria: "Ropa"
+  },
 
+  {
+    id:5,
+    nombre: "Sueter",
+    img: "https://images.pexels.com/photos/45982/pexels-photo-45982.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+    descripcion: "Suéter liso. Composición: Algodón 79% Poliamida 21%. Instrucciones de lavado:Lavar a máquina, máx. 30ºC, No usar cloro, Planchar máx. 110ºC, No usar secadora.",
+    precio: 560,
+    fecha_publicacion: "26/9/2020 20:40:2",
+    stock: 20,
+    categoria: "Ropa"
+  },
 ]
 
 var carrito = [];
@@ -64,11 +84,11 @@ function registroNew(){
 }
 function modalCarro(){
   // carroId.innerHTML ='';
+  console.log(JSON.stringify(carrito))
   modal4.style.display = "block"
   if(carrito.length==0 ){
     carroId.innerHTML ='';
-    carroId.innerHTML = carroId.innerHTML +`
-      <h1>No hay agregado ningun producto</h1>
+    carroId.innerHTML = `<h1>No hay agregado ningun producto</h1>
     `
   } 
   
@@ -120,10 +140,10 @@ var time = new Date();
 
 // funciones de carrito
 
-function carro(po){
+function carro(id){
   for(let i=0; i<productos.length;i++){
-    if(po==productos[i].id){
-      console.log(JSON.stringify(productos[i]))
+    if(id==productos[i].id){
+      // console.log(JSON.stringify(productos[i]))
        carrito.push(productos[i]);
     }
   }
@@ -131,16 +151,14 @@ function carro(po){
 }
 function drop1(id) {
   var confirmar = confirm("¿Esta seguro que desea eliminar este Producto?")
-  if (confirmar) {
-    console.log("si entra " + id) 
+  if (confirmar) {   
     for(let i=0;i<carrito.length;i++){
       if(carrito[i].id==id){
-        console.log('di entra'+carrito[i].id+"=="+id+"--"+i)
-        productos.splice(i, 1);
-        
+        // console.log('di entra'+carrito[i].id+"=="+id+"--"+i)
+        carrito.splice(i, 1);
         console.log(JSON.stringify(productos)) 
-        carroId.innerHTML ='';
         showCarro() 
+        break;
       }
     }
   }
@@ -148,13 +166,16 @@ function drop1(id) {
 }
 function showCarro(){
   carroId.innerHTML ='';
-  console.log('si entra' + carrito.length)
+  // console.log('si entra final' + carrito.length)
+  if(carrito.length==[]){
+    carroId.innerHTML = '<h1>No hay productos</h1>'
+  }
   for(let j=0; j< carrito.length;j++){
     carroId.innerHTML = carroId.innerHTML +`
     <div class="table-productos">
       <div class="header-carrito">${carrito[j].nombre}</div>
   
-      <table cellspacing="0">
+      <table>
           <tr>
               <th>Imagen</th>
               <th>Precio</th>
@@ -178,7 +199,7 @@ function index() {
     // console.log(productos.length)
     section.innerHTML = section.innerHTML + `<div class="producto">
     <h1>${productos[i].nombre}</h1>  
-    <img src=${productos[i].img} alt="Productos">
+    <img src=${productos[i].img} class="img-index"  alt="Productos">
       <p>${productos[i].descripcion}</p>
       <span>${productos[i].precio}</span>
       <hr>
@@ -194,7 +215,7 @@ function index() {
 function drop(id) {
   var confirmar = confirm("¿Esta seguro que desea eliminar este registro?")
   if (confirmar) {
-    contejecucion = contejecucion + 1;
+    // contejecucion = contejecucion + 1;
     var id = id - 1;
     productos.splice(id, 1);
     div.innerHTML = ""

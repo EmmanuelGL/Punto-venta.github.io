@@ -92,11 +92,14 @@
 
 .producto{
     width: calc(100% / 3.7);
+    height: 500px;
     margin: 2rem;
     float: left;  
 }
 .producto img{
     width: 100%;
+    height: 300px;
+    object-fit: cover;
 }
 .content{
     width: 100%;
@@ -177,10 +180,12 @@ tr td:first-child {
   border: 1px solid #ccc;
   max-width: calc(100% - 2em);
   margin: 1em auto;
-  width: 100%;
+  width: 800px;
+  margin: auto;
+  
 }
 
-.table-productos table { width: 100%; }
+.table-productos table { width: 100%; text-align: center; }
 
 .table-productos td,.table-productos th { padding: 10px; }
 

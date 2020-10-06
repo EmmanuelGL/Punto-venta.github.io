@@ -92,11 +92,14 @@
 
 .producto{
     width: calc(100% / 3.7);
+    height: 500px;
     margin: 2rem;
     float: left;  
 }
 .producto img{
     width: 100%;
+    height: 300px;
+    object-fit: cover;
 }
 .content{
     width: 100%;
