@@ -144,6 +144,8 @@ function carro(id){
   for(let i=0; i<productos.length;i++){
     if(id==productos[i].id){
       // console.log(JSON.stringify(productos[i]))
+      var agregar=confirm("Desea agregar a carrito")
+      if(agregar)
        carrito.push(productos[i]);
     }
   }
@@ -206,7 +208,7 @@ function index() {
       <footer>
           <p>Publicado:</p>
           <time datetime=${productos[i].fecha_publicacion}>${productos[i].fecha_publicacion}</time>
-          <a class="btn-warning" href="javascript:carro(${productos[i].id});">holaaaa</a>
+          <a class="btn-warning" href="javascript:carro(${productos[i].id});">Agregar a carrito</a>
       </footer>
       </div>  `;
   }

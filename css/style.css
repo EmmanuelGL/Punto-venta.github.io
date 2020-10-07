@@ -103,6 +103,16 @@
 }
 .content{
     width: 100%;
+    text-align: justify;
+}
+.producto .btn-warning{
+  display: block;
+  background-color: #0cafe0;
+  text-align: center;
+  text-decoration: none;
+}
+.producto .btn-warning:hover{
+  background-color: #0c56e0;
 }
 
 /* style de agregar  tabla de mostrar  */
